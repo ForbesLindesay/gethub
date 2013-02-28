@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ForbesLindesay/gethub.png?branch=master)](https://travis-ci.org/ForbesLindesay/gethub)
 # GetHub
 
 Download a github repository to a folder using the .tar.gz bundle
