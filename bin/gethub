@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var exists = require('fs').existsSync;
+var rimraf = require('rimraf');
+var join = require('path').join;
+var download = require('../');
+
+var user, repo;
+var match = /^([^\/]+)\/([^\/]+)$/.exec(process.argv[2]);
+if (!match) {
+  console.error('\u001b[31mYou must call with "user/repo"\u001b[0m');
+  process.exit(1);
+}
+
+user = match[1];
+repo = match[2];
+
+if (exists(join(process.cwd(), repo))) {
+  console.error('\u001b[31m' + repo + ' already exists in the current working directory.\u001b[0m');
+  process.exit(1);
+}
+
+download(user, repo, 'master', join(process.cwd(), repo))
+  .then(function () {
+    console.warn('\u001b[34mDownload Complete\u001b[0m');
+    process.exit(0);
+  }, function (err) {
+    console.error(err.stack || err.message || err);
+    console.error('\u001b[31mDownload Failed!!\u001b[0m');
+    rimraf.sync(join(process.cwd(), repo));
+    process.exit(1);
+  });
