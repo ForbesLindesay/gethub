@@ -10,9 +10,9 @@ Download a github repository to a folder using the .tar.gz bundle
 
 ### Command Line
 
-  The following command downloads `download-github` at the master tag into the `download-github` folder
+  The following command downloads `gethub` at the `master` tag into the `gethub` folder
 
-    $ gethub ForbesLindesay/download-github
+    $ gethub ForbesLindesay/gethub
 
 ### API
 
@@ -20,9 +20,9 @@ Download a github repository to a folder using the .tar.gz bundle
 var join = require('path').join;
 var download = require('gethub');
 
-download('ForbesLindesay', 'download-github', 'master', join(__dirname, 'download-github'), function (err) {
+download('ForbesLindesay', 'gethub', 'master', join(__dirname, 'gethub'), function (err) {
   if (err) throw err;
-  console.log('downloaded ForbesLindesay/download-github@master into: ' + join(__dirname, 'download-github'));
+  console.log('downloaded ForbesLindesay/gethub@master into: ' + join(__dirname, 'gethub'));
 });
 ```
 
@@ -34,9 +34,9 @@ If you omit the callback, a promise is returned.
 var join = require('path').join;
 var download = require('gethub');
 
-download('ForbesLindesay', 'download-github', 'master', join(__dirname, 'download-github'))
+download('ForbesLindesay', 'gethub', 'master', join(__dirname, 'gethub'))
   .then(function (err) {
-    console.log('downloaded into: ' + join(__dirname, 'download-github'));
+    console.log('downloaded into: ' + join(__dirname, 'gethub'));
   }, function (err) {
     console.warn(err.stack);
   });
