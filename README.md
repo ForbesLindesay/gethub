@@ -1,10 +1,10 @@
-# download-github
+# GetHub
 
 Download a github repository to a folder using the .tar.gz bundle
 
 ## Installation
 
-    $ npm install download-github
+    $ npm install gethub
 
 ## Usage
 
@@ -18,7 +18,7 @@ Download a github repository to a folder using the .tar.gz bundle
 
 ```javascript
 var join = require('path').join;
-var download = require('download-github');
+var download = require('gethub');
 
 download('ForbesLindesay', 'download-github', 'master', join(__dirname, 'download-github'), function (err) {
   if (err) throw err;
@@ -32,7 +32,7 @@ If you omit the callback, a promise is returned.
 
 ```javascript
 var join = require('path').join;
-var download = require('download-github');
+var download = require('gethub');
 
 download('ForbesLindesay', 'download-github', 'master', join(__dirname, 'download-github'))
   .then(function (err) {
