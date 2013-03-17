@@ -4,7 +4,7 @@
   "description": "Download a github repository to a folder using the .tar.gz bundle",
   "main": "index.js",
   "dependencies": {
-    "request": "~2.14.0",
+    "hyperquest": "~0.1.0",
     "nodeify": "~1.0.0",
     "rimraf": "~2.1.4",
     "tar": "~0.1.16"
