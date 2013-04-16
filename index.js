@@ -36,7 +36,7 @@ function getURL(url, cb) {
     if (response.statusCode === 302 || response.statusCode === 301) {
       getURL(response.headers.location, cb);
     } else if (response.statusCode !== 200) {
-      cb(new Error('Server responeded with status code ' + response.statusCode + ' for ' + user + '/' + repo + '/' + tag));
+      cb(new Error('Server responeded with status code ' + response.statusCode + ' for ' + url));
     } else {
       cb(null, stream);
     }
