@@ -1,6 +1,6 @@
 <img src="http://i.imgur.com/TYRRhxj.png" align="right" />
-[![Build Status](https://travis-ci.org/ForbesLindesay/gethub.png?branch=master)](https://travis-ci.org/ForbesLindesay/gethub)
-[![Dependency Status](https://gemnasium.com/ForbesLindesay/gethub.png)](https://gemnasium.com/ForbesLindesay/gethub)
+[![Build Status](https://img.shields.io/travis/ForbesLindesay/gethub/master.svg)](https://travis-ci.org/ForbesLindesay/gethub)
+[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/gethub.svg)](https://gemnasium.com/ForbesLindesay/gethub)
 # GetHub
 
 Download a github repository to a folder using the .tar.gz bundle
