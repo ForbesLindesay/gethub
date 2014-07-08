@@ -1,6 +1,6 @@
 {
   "name": "gethub",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Download a github repository to a folder using the .tar.gz bundle",
   "main": "index.js",
   "dependencies": {
