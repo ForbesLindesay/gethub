@@ -11,13 +11,19 @@ if (!match) {
   console.error('\u001b[31mYou must call with "user/repo"\u001b[0m');
   process.exit(1);
 }
+var force = process.argv[3] === '-f' || process.argv[3] === '--force';
 
 user = match[1];
 repo = match[2];
 
 if (exists(join(process.cwd(), repo))) {
-  console.error('\u001b[31m' + repo + ' already exists in the current working directory.\u001b[0m');
-  process.exit(1);
+  if (force) {
+    console.error('\u001b[31m' + repo + ' already exists and will be deleted.\u001b[0m');
+    rimraf.sync(join(process.cwd(), repo));
+  } else {
+    console.error('\u001b[31m' + repo + ' already exists in the current working directory. (use -f to skip this)\u001b[0m');
+    process.exit(1);
+  }
 }
 
 download(user, repo, 'master', join(process.cwd(), repo))
