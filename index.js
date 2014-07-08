@@ -1,14 +1,14 @@
 var request = require('hyperquest');
 var zlib = require('zlib');
 var tar = require('tar');
-var promise = require('nodeify').Promise;
+var Promise = require('promise');
 
 module.exports = download;
 function download(user, repo, tag, dir, callback) {
-  return promise(function (res) {
+  return new Promise(function (resolve, reject) {
     var url = 'https://github.com/' + user + '/' + repo + '/archive/' + tag + '.tar.gz'
     getURL(url, function (ex, a) {
-      if (ex) return res.reject(ex);
+      if (ex) return reject(ex);
       var b = zlib.createGunzip();
       var c = tar.Extract({
         path: dir,
@@ -22,10 +22,10 @@ function download(user, repo, tag, dir, callback) {
 
       function err(err) {
         console.warn('error');
-        res.reject(err);
+        reject(err);
       }
       function done() {
-        res.fulfill(dir);
+        resolve(dir);
       }
     });
   }).nodeify(callback);;

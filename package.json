@@ -5,16 +5,18 @@
   "main": "index.js",
   "dependencies": {
     "hyperquest": "~0.1.0",
-    "nodeify": "~1.0.0",
     "rimraf": "~2.1.4",
-    "tar": "~0.1.16"
+    "tar": "~0.1.16",
+    "promise": "~5.0.0"
   },
   "devDependencies": {
     "mocha": "~1.8.1",
-    "mocha-as-promised": "~1.2.1"
+    "mocha-as-promised": "~1.2.1",
+    "linify": "~1.0.1"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "prepublish": "linify transform ./bin"
   },
   "bin": {
     "gethub": "./bin/gethub"
