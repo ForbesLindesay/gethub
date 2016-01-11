@@ -1,4 +1,3 @@
-require('mocha-as-promised')();
 var assert = require('assert');
 var exists = require('fs').existsSync;
 var join = require('path').join;
