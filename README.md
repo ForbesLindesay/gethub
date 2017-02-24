@@ -3,6 +3,8 @@
 [![Dependency Status](https://img.shields.io/david/ForbesLindesay/gethub.svg)](https://david-dm.org/ForbesLindesay/gethub)
 # GetHub
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/gethub.svg)](https://greenkeeper.io/)
+
 Download a github repository to a folder using the .tar.gz bundle
 
 ## Installation
